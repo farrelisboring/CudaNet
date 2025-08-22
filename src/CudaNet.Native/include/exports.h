@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef CUDANET_EXPORTS
+#if defined(CUDANETNATIVE_EXPORTS) || defined(CUDANET_EXPORTS)
 #define MY_API __declspec(dllexport)
 #else
 #define MY_API __declspec(dllimport)

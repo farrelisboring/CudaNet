@@ -1,19 +1,12 @@
 #pragma once
-#include <vector>
-#include <cstddef> // size_t
 
-
-class Context {
-public:
-    std::vector<int> data;
-};
 
 
 extern "C" {
-
-    MY_API Context* Context_Create();
-    MY_API void     Context_Destroy(Context* ctx);
-
- 
-    MY_API void     Context_PassPtr(Context* ctx, const int* ptrInt, std::size_t n);
+    MY_API void     MatrixMultiplyFloat32(const float* a_ptr,
+        const float* b_ptr,
+        float* c_buffer,
+        int a_row,
+        int shared_dimension,
+        int b_col);
 }
