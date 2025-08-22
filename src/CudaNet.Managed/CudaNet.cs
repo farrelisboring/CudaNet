@@ -3,9 +3,10 @@
 
 namespace CudaNet;
 
-public static class Matrix {
+public static class CudaMatrix
+{
 
-    [DllImport("mylib", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("NativeCuda", CallingConvention = CallingConvention.Cdecl)]
     private static extern unsafe void MatrixMultiplyFloat32(IntPtr aPtr, IntPtr bPtr, IntPtr buffer, int m, int k, int n);
 
 
